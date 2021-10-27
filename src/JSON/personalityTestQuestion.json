@@ -1,0 +1,252 @@
+[
+    {
+        "question": "Am the life of the party",
+        "category": "1",
+        "sign": "+"
+    },
+    {
+        "question": "Feel little concern for others",
+        "category": "2",
+        "sign": "-"
+    },
+    {
+        "question": "Am always prepared",
+        "category": "3",
+        "sign": "+"
+    },
+    {
+        "question": "Get stressed out easily",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Have a rich vocabulary",
+        "category": "5",
+        "sign": "+"
+    },
+    {
+        "question": "Don't talk a lot",
+        "category": "1",
+        "sign": "-"
+    },
+    {
+        "question": "Am interested in people",
+        "category": "2",
+        "sign": "+"
+    },
+    {
+        "question": "Leave my belongings around",
+        "category": "3",
+        "sign": "-"
+    },
+    {
+        "question": "Am relaxed most of the time",
+        "category": "4",
+        "sign": "+"
+    },
+    {
+        "question": "Have difficulty understanding abstract ideas",
+        "category": "5",
+        "sign": "-"
+    },
+    {
+        "question": "Feel comfortable around people",
+        "category": "1",
+        "sign": "+"
+    },
+    {
+        "question": "Insult people",
+        "category": "2",
+        "sign": "-"
+    },
+    {
+        "question": "Pay attention to details",
+        "category": "3",
+        "sign": "+"
+    },
+    {
+        "question": "Worry about things",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Have a vivid imagination",
+        "category": "5",
+        "sign": "+"
+    },
+    {
+        "question": "Keep in the background",
+        "category": "1",
+        "sign": "-"
+    },
+    {
+        "question": "Sympathize with others' feelings",
+        "category": "2",
+        "sign": "+"
+    },
+    {
+        "question": "Make a mess of things",
+        "category": "3",
+        "sign": "-"
+    },
+    {
+        "question": "Seldom feel blue",
+        "category": "4",
+        "sign": "+"
+    },
+    {
+        "question": "Am not interested in abstract ideas",
+        "category": "5",
+        "sign": "-"
+    },
+    {
+        "question": "Start conversations",
+        "category": "1",
+        "sign": "+"
+    },
+    {
+        "question": "Am not interested in other people's problems",
+        "category": "2",
+        "sign": "-"
+    },
+    {
+        "question": "Get chores done right away",
+        "category": "3",
+        "sign": "+"
+    },
+    {
+        "question": "Am easily disturbed",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Have excellent ideas",
+        "category": "5",
+        "sign": "+"
+    },
+    {
+        "question": "Have little to say",
+        "category": "1",
+        "sign": "-"
+    },
+    {
+        "question": "Have a soft heart",
+        "category": "2",
+        "sign": "+"
+    },
+    {
+        "question": "Often forget to put things back in their proper place",
+        "category": "3",
+        "sign": "-"
+    },
+    {
+        "question": "Get upset easily",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Do not have a good imagination",
+        "category": "5",
+        "sign": "-"
+    },
+    {
+        "question": "Talk to a lot of different people at parties",
+        "category": "1",
+        "sign": "+"
+    },
+    {
+        "question": "Am not really interested in others",
+        "category": "2",
+        "sign": "-"
+    },
+    {
+        "question": "Like order",
+        "category": "3",
+        "sign": "+"
+    },
+    {
+        "question": "Change my mood a lot",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Am quick to understand things",
+        "category": "5",
+        "sign": "+"
+    },
+    {
+        "question": "Don't like to draw attention to myself",
+        "category": "1",
+        "sign": "-"
+    },
+    {
+        "question": "Take time out for others",
+        "category": "2",
+        "sign": "+"
+    },
+    {
+        "question": "Shirk my duties",
+        "category": "3",
+        "sign": "-"
+    },
+    {
+        "question": "Have frequent mood swings",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Use difficult words",
+        "category": "5",
+        "sign": "+"
+    },
+    {
+        "question": "Don't mind being the center of attention",
+        "category": "1",
+        "sign": "+"
+    },
+    {
+        "question": "Feel others' emotions",
+        "category": "2",
+        "sign": "+"
+    },
+    {
+        "question": "Follow a schedule",
+        "category": "3",
+        "sign": "+"
+    },
+    {
+        "question": "Get irritated easily",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Spend time reflecting on things",
+        "category": "5",
+        "sign": "+"
+    },
+    {
+        "question": "Am quiet around strangers",
+        "category": "1",
+        "sign": "-"
+    },
+    {
+        "question": "Make people feel at ease",
+        "category": "2",
+        "sign": "+"
+    },
+    {
+        "question": "Am exacting in my work",
+        "category": "3",
+        "sign": "+"
+    },
+    {
+        "question": "Often feel blue",
+        "category": "4",
+        "sign": "-"
+    },
+    {
+        "question": "Am full of ideas",
+        "category": "5",
+        "sign": "+"
+    }
+]
