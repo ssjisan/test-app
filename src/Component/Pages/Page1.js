@@ -59,7 +59,7 @@ const countResult = () => {
   }
   console.log("point-",value,"step-",category,"RES-",countResult());
   return (
-    <div>
+    <div className={classes.about}>
       <Card className={classes.card}>
         <CardContent>
           <Grid>

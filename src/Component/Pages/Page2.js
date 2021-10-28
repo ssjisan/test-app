@@ -1,10 +1,12 @@
 import { Typography } from '@material-ui/core'
 import React from 'react'
+import useStyles from "./Style/Page1style";
 
 export default function Page2() {
+    const classes = useStyles();
     return (
-        <div>
-            <Typography>About Me</Typography>
+        <div className={classes.about}>
+                          
         </div>
     )
 }

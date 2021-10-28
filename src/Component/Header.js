@@ -22,13 +22,16 @@ export default function Header() {
           flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "center",
+          position: "relative",
+          backgroundColor: "transparent",
+          zIndex:1
         }}
       >
         <div
           className={classes.tabLink}
           style={{
             borderBottom:
-              page === 1 ? "3px solid #35DCDC" : "3px solid #FFFFFF",
+              page === 1 ? "3px solid #35DCDC" : "3px solid transparent",
             color: page === 1 ? "black" : "black",
           }}
           onClick={() => handleClick(1)}
@@ -39,7 +42,7 @@ export default function Header() {
           className={classes.tabLink}
           style={{
             borderBottom:
-              page === 2 ? "3px solid #35DCDC" : "3px solid #FFFFFF",
+              page === 2 ? "3px solid #35DCDC" : "3px solid transparent",
             color: page === 2 ? "black" : "black",
           }}
           onClick={() => handleClick(2)}
@@ -50,7 +53,7 @@ export default function Header() {
           className={classes.tabLink}
           style={{
             borderBottom:
-              page === 3 ? "3px solid #35DCDC" : "3px solid #FFFFFF",
+              page === 3 ? "3px solid #35DCDC" : "3px solid transparent",
             color: page === 3 ? "black" : "black",
           }}
           onClick={() => handleClick(3)}
@@ -61,7 +64,7 @@ export default function Header() {
           className={classes.tabLink}
           style={{
             borderBottom:
-              page === 4 ? "3px solid #35DCDC" : "3px solid #FFFFFF",
+              page === 4 ? "3px solid #35DCDC" : "3px solid transparent",
             color: page === 4 ? "black" : "black",
           }}
           onClick={() => handleClick(4)}
@@ -72,7 +75,7 @@ export default function Header() {
           className={classes.tabLink}
           style={{
             borderBottom:
-              page === 5 ? "3px solid #35DCDC" : "3px solid #FFFFFF",
+              page === 5 ? "3px solid #35DCDC" : "3px solid transparent",
             color: page === 5 ? "black" : "black",
           }}
           onClick={() => handleClick(5)}
