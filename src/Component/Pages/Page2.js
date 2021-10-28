@@ -6,7 +6,7 @@ export default function Page2() {
     const classes = useStyles();
     return (
         <div className={classes.about}>
-                          
+            
         </div>
     )
 }

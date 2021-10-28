@@ -20,12 +20,12 @@ export default function Page1() {
   const [questionSet, setQuestionSet] = useState(allQuestion);
   const [curQuestionNo, setCurQuestionNo] = useState(0);
   const [category, setCategory] = useState("");
-  const [result, setResult] = useState();
   const [extraversion, setExtraversion] = useState(0);
   const [agreeableness, setAgreeableness] = useState(0);
   const [conscientiousness, setConscientiousness] = useState(0);
   const [neuroticism, setNeuroticism] = useState(0);
   const [openness, setOpenness] = useState(0);
+  const [isFinished, setIsFinished] = useState(false);
   console.log("extraversion = ", extraversion);
   console.log("agreeableness = ", agreeableness);
   console.log("conscientiousness = ", conscientiousness);
@@ -36,6 +36,7 @@ export default function Page1() {
     setValue(event.target.value);
   };
   const countResult = () => {
+    // eslint-disable-next-line default-case
     switch (category) {
       case "extraversion":
         setExtraversion(+value + extraversion);
@@ -52,19 +53,17 @@ export default function Page1() {
       case "openness":
         setOpenness(+value + openness);
         break;
-        deafault:;
     }
   };
-  // countResult();
   const nextQuestion = () => {
     countResult();
     setCurQuestionNo(questionSet[curQuestionNo].index);
     setValue("");
   };
-  const testResult = () => {
-    
+  const handleFinish = () => {
+    countResult();
+    setIsFinished(true);
   };
-  // console.log("point-", value, "step-", category, "RES-", countResult());
   return (
     <div className={classes.about}>
       <Card className={classes.card}>
@@ -74,12 +73,13 @@ export default function Page1() {
               <Typography variant="h6" className={classes.title}>
                 Personality Test
               </Typography>
-              <FormControl
+            {!isFinished ?  <> <FormControl
                 component="fieldset"
                 className={classes.form}
                 onClick={() => setCategory(questionSet[curQuestionNo].category)}
               >
-                <FormLabel
+               
+                  <FormLabel
                   component="legend"
                   style={{
                     color: "black",
@@ -142,11 +142,32 @@ export default function Page1() {
                     Next
                   </Button>
                 ) : (
-                  <Button variant="outlined" onClick={countResult}>
+                  <Button variant="outlined" onClick={handleFinish}>
                     Finish
                   </Button>
                 )}
               </FormControl>
+                </>  
+                :
+                <>
+                  <Typography variant="h6" className={classes.title}>
+                      extraversion :{extraversion}
+                    </Typography>
+                    <Typography variant="h6" className={classes.title}>
+                      agreeableness :{agreeableness}
+                    </Typography>
+                    <Typography variant="h6" className={classes.title}>
+                      conscientiousness :{conscientiousness}
+                    </Typography>
+                    <Typography variant="h6" className={classes.title}>
+                      neuroticism :{neuroticism}
+                    </Typography>
+                    <Typography variant="h6" className={classes.title}>
+                      openness :{openness}
+                    </Typography>
+                </>}
+              
+           
             </Grid>
           </Grid>
         </CardContent>
