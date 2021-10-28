@@ -1,6 +1,14 @@
 import {
-    Button, Card, CardContent, FormControl, FormControlLabel,
-    FormLabel, Grid, Radio, RadioGroup, Typography
+  Button,
+  Card,
+  CardContent,
+  FormControl,
+  FormControlLabel,
+  FormLabel,
+  Grid,
+  Radio,
+  RadioGroup,
+  Typography
 } from "@material-ui/core";
 import React, { useState } from "react";
 import allQuestion from "../../JSON/personalityTestQuestion.json";
@@ -8,35 +16,48 @@ import useStyles from "./Style/Page1style";
 
 export default function Page1() {
   const classes = useStyles();
-  const [value, setValue] = React.useState("");
-  const [count, setCount] = React.useState("");
+  const [value, setValue] = useState("");
   const [questionSet, setQuestionSet] = useState(allQuestion);
-  console.log(questionSet);
+  const [curQuestionNo, setCurQuestionNo] = useState(0);
+  const [category, setCategory] = useState("");
+  const [result, setResult] = useState();
+  
   const handleChange = (event) => {
     setValue(event.target.value);
-    switch (event.target.value) {
-      case "veryInaccurate":
-        setCount(1);
-        break;
-      case "moderatelyInaccurate":
-        setCount(2);
-        break;
-      case "neitherAccurateNorInaccurate":
-        setCount(3);
-        break;
-      case "moderatelyAccurate":
-        setCount(4);
-        break;
-      case "veryAccurate":
-        setCount(5);
-        break;
-      default:
-        setCount(0);
-        break;
-    }
-    console.log(value);
   };
-  console.log(count);
+const countResult = () => {
+  let extraversion = 0;
+  let agreeableness = 0;
+  let conscientiousness = 0;
+  let neuroticism = 0;
+  let openness = 0;
+  if (category === "extraversion") {
+    extraversion = +value + extraversion;
+    return extraversion;
+  }
+  else  if (category === "agreeableness") {
+    agreeableness = +value + agreeableness;
+    return agreeableness;
+  }
+  else  if (category === "conscientiousness") {
+    conscientiousness = +value + conscientiousness;
+    return conscientiousness;
+  }
+  else  if (category === "neuroticism") {
+    neuroticism = +value + neuroticism;
+    return neuroticism;
+  }
+  else  if (category === "openness") {
+    openness = +value + openness;
+    return openness;
+  }
+  }
+  countResult()
+  const nextQuestion = () => {
+    setCurQuestionNo(questionSet[curQuestionNo].index)
+    setValue('');
+  }
+  console.log("point-",value,"step-",category,"RES-",countResult());
   return (
     <div>
       <Card className={classes.card}>
@@ -46,46 +67,53 @@ export default function Page1() {
               <Typography variant="h6" className={classes.title}>
                 Personality Test
               </Typography>
-                          {
-                              questionSet.map((question, index) => <FormControl component="fieldset" className={classes.form}>
-                              <FormLabel component="legend">Question {index+1}# {question.question} </FormLabel>
-                              <RadioGroup
-                                aria-label="gender"
-                                name="gender1"
-                                value={value}
-                                onChange={handleChange}
-                              >
-                                <FormControlLabel
-                                  value="veryInaccurate"
-                                  control={<Radio />}
-                                  label="Very Inaccurate"
-                                />
-                                <FormControlLabel
-                                  value="moderatelyInaccurate"
-                                  control={<Radio />}
-                                  label="Moderately Inaccurate"
-                                />
-                                <FormControlLabel
-                                  value="neitherAccurateNorInaccurate"
-                                  control={<Radio />}
-                                  label="Neither Accurate Nor Inaccurate"
-                                />
-                                <FormControlLabel
-                                  value="moderatelyAccurate"
-                                  control={<Radio />}
-                                  label="Moderately Accurate"
-                                />
-                                <FormControlLabel
-                                  value="veryAccurate"
-                                  control={<Radio />}
-                                  label="Very Accurate"
-                                />
-                                  </RadioGroup>
-                                  <Button variant="outlined">{question.sign} Next {question.category}</Button>
-                              </FormControl>
-                                  
-                              )
-                          }
+              <FormControl component="fieldset" className={classes.form} onClick={()=>setCategory(questionSet[curQuestionNo].category)}>
+                <FormLabel component="legend" style={{color:"black", fontWeight:"bold", fontSize:"20px"}}>
+                  {questionSet[curQuestionNo].question}
+                </FormLabel>
+                <RadioGroup
+                  aria-label="gender"
+                  name="gender1"
+                  value={value}
+                  onChange={handleChange}
+                >
+                  <FormControlLabel
+                    value={questionSet[curQuestionNo].veryInaccurate}
+                    checked={value === questionSet[curQuestionNo].veryInaccurate}
+                    control={<Radio />}
+                    label="Very Inaccurate"
+                  />
+                  <FormControlLabel
+                    value={questionSet[curQuestionNo].moderatelyInaccurate}
+                    checked={value === questionSet[curQuestionNo].moderatelyInaccurate}
+                    control={<Radio />}
+                    label="Moderately Inaccurate"
+                  />
+                  <FormControlLabel
+                    value={questionSet[curQuestionNo].neitherAccurateNorInaccurate}
+                    control={<Radio />}
+                    checked={value === questionSet[curQuestionNo].neitherAccurateNorInaccurate}
+                    label="Neither Accurate Nor Inaccurate"
+                  />
+                  <FormControlLabel
+                    value={questionSet[curQuestionNo].moderatelyAccurate}
+                    checked={value === questionSet[curQuestionNo].moderatelyAccurate}
+                    control={<Radio />}
+                    label="Moderately Accurate"
+                  />
+                  <FormControlLabel
+                    value={questionSet[curQuestionNo].veryAccurate}
+                    checked={value === questionSet[curQuestionNo].veryAccurate}
+                    control={<Radio />}
+                    label="Very Accurate"
+                  />
+                </RadioGroup>
+                {
+                  curQuestionNo < questionSet.length-1 ?
+                    <Button variant="outlined" onClick={nextQuestion}>Next</Button>:
+                    <Button variant="outlined">Finish</Button>
+                }
+              </FormControl>
             </Grid>
           </Grid>
         </CardContent>
